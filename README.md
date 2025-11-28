@@ -43,13 +43,13 @@ https://dharanitandyala.github.io/tictactoe/
 
 Current GitHub Statistics
 
-Total Views: 13
+Total Views: 68
 
 Unique Visitors: 1
 
-Total Clones: 10
+Total Clones: 17
 
-Unique Cloners: 9
+Unique Cloners: 15
 
 Future Enhancements
 
