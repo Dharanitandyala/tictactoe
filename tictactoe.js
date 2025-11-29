@@ -37,11 +37,11 @@ if(p1 === "" || p2 === ""){
 }
    
     if(turn){
-      box.innerText="o";
+      box.innerText="x";
       turn=false;
     }
     else{
-    box.innerText="x";
+    box.innerText="o";
     turn=true;
     }
     box.disabled=true;
@@ -84,22 +84,23 @@ const showWinner=(winner) =>{
     disableBoxes();
 };
 
-const checkWinner=() =>{
-    for(let pattern of winPatterns){
-        
-        let pos1=boxes[pattern[0]].innerText;
-        let pos2=boxes[pattern[1]].innerText;
-        let pos3=boxes[pattern[2]].innerText;
+const checkWinner = () => {
+    for (let pattern of winPatterns) {
+        let pos1 = boxes[pattern[0]].innerText;
+        let pos2 = boxes[pattern[1]].innerText;
+        let pos3 = boxes[pattern[2]].innerText;
 
-        if(pos1!="" && pos2!="" && pos3!=""){
-            if(pos1==pos2 && pos2==pos3){
-                console.log("Winner",pos1);
+        if (pos1 !== "" && pos2 !== "" && pos3 !== "") {
+            if (pos1 === pos2 && pos2 === pos3) {
                 showWinner(pos1);
+                return true;  // 👈 IMPORTANT: Stop function once winner is found
             }
         }
     }
+    return false; 
 };
 
 newGame.addEventListener("click",resetGame);
 reset.addEventListener("click",resetGame);
+
 
